@@ -13,19 +13,15 @@ internal struct BLEPeripheralManagerFactory: BLEPeripheralManagerFactoryService 
 
 		switch deviceType {
 		case .bloodGlucose:
-//			return BLEPeripheralManager(delegate: BLEAccuChekGlucoseMonitor())
 			fatalError("Unsupported Peripheral Type")
 
 		case .bloodOxygen:
-//			return BLEPeripheralManager(delegate: BLENoninPulseOximeter())
 			fatalError("Unsupported Peripheral Type")
 
 		case .bloodPressure:
-//			return BLEPeripheralManager(delegate: BLEAnDBloodPressureMonitor())
 			fatalError("Unsupported Peripheral Type")
 
 		case .stepCount:
-//				return BLEPeripheralManager(delegate: BLEGarminVivofit2())
 			fatalError("Unsupported Peripheral Type")
 
 		case .weight:

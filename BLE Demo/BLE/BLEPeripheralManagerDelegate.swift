@@ -45,8 +45,6 @@ protocol BLEPeripheralManagerDelegate: class {
 	// MARK: Methods
 	func characteristicUUID() -> String
 
-	func handleHealthCheckSubmissionSuccessful()
-
 	func handleNotificationCentralManagerDidUpdateState(_ bluetoothStatus: BluetoothStatus)
 
 	func handleNotificationDidConnectPeripheral(_ notification: Foundation.Notification)
@@ -93,10 +91,6 @@ extension BLEPeripheralManagerDelegate {
 
 	internal func triggerBluetoothPoweredOffAlert() -> Bool {
 		return bleService.triggerBluetoothPoweredOffAlert()
-	}
-
-	internal func handleHealthCheckSubmissionSuccessful() {
-		print("empty, default implementation")
 	}
 
 	internal func isPeripheralSupported(_ foundPeripheralName: String) -> Bool {

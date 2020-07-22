@@ -94,10 +94,6 @@ final class BLEPeripheralManager: NSObject {
 	}
 
 	// MARK: Methods
-	internal func handleHealthCheckSubmissionSuccessful() {
-		delegate.handleHealthCheckSubmissionSuccessful()
-	}
-
 	internal func triggerBluetoothPoweredOffAlert() -> Bool {
 		return delegate.triggerBluetoothPoweredOffAlert()
 	}

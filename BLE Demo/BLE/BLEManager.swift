@@ -38,9 +38,6 @@ extension BLEService {
 			return BLEServiceName.serviceName
 		}
 	}
-
-	func exampleServiceFunction() {
-	}
 }
 
 /**
