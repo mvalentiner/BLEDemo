@@ -8,7 +8,6 @@
 
 import CoreBluetooth
 
-
 private struct BLEServiceName {
 	static let serviceName = "BLEService"
 }
@@ -21,15 +20,24 @@ extension ServiceRegistryImplementation {
 	}
 }
 
+struct BLEPeripheral: Identifiable {
+	let name: String
+	var id: UUID { get { identifier }}
+	let identifier: UUID
+	let advertisementData: [String: Any]
+	let rssi: NSNumber
+	let peripheral: CBPeripheral
+}
+
 protocol BLEService : SOAService {
 	var bluetoothStatus: BluetoothStatus { get }
+	var foundPeripherals: [BLEPeripheral] { get }
 
 	func triggerBluetoothPoweredOffAlert() -> Bool
 	func connectPeripheral(_ peripheral: CBPeripheral)
 	func disconnectPeripheral(_ peripheral: CBPeripheral)
 	func startScanning(_ serviceUUIDs: [CBUUID])
 	func stopScanning()
-
 }
 
 extension BLEService {
@@ -72,7 +80,7 @@ final class BLEManager: NSObject, BLEService {
 		internal static var blePeripheralDidUpdateValueForCharacteristic: Notification.Name { return Notification.Name(#function) }
 	}
 
-	internal var foundPeripherals = Array<Dictionary<String, Any>>()
+	internal var foundPeripherals: [BLEPeripheral] = []
 	private var centralManager: CBCentralManager!
 
 	// MARK: Stored Properties
@@ -243,26 +251,20 @@ extension BLEManager: CBCentralManagerDelegate {
 		print(#function)
 
 		// Don't add if we already know this peripheral
-		let foundId = peripheral.identifier
-		for knownPeripheralDictionary in foundPeripherals {
-			if let knownPeripheral = knownPeripheralDictionary["peripheral"] as? CBPeripheral {
-				if knownPeripheral.identifier == foundId {
-					print("peripheral already known: \(String(describing: peripheral.name))")
-					return
-				}
-			}
+		guard foundPeripherals.first(where: { $0.identifier == peripheral.identifier }) == nil else {
+			print("peripheral already known: \(String(describing: peripheral.name))")
+			return
 		}
+
 		print("name = \(String(describing: peripheral.name))")
 		print("peripheral = \(peripheral)")
 		print("identifier = \(peripheral.identifier)")
 
-		var peripheralDictionary = Dictionary<String, Any>()
-		peripheralDictionary["peripheral"] = peripheral
-		peripheralDictionary["advertisementData"] = advertisementData
-		peripheralDictionary["RSSI"] = RSSI
-		foundPeripherals.append(peripheralDictionary)
+		let blePeripheral = BLEPeripheral(name: peripheral.name ?? "Unknown", identifier: peripheral.identifier, advertisementData: advertisementData,
+			rssi: RSSI, peripheral: peripheral)
+		foundPeripherals.append(blePeripheral)
 		Notification.post(name: BLEManager.NotificationId.bleManagerFoundPeripheralsChanged, object: foundPeripherals)
-		Notification.post(name: BLEManager.NotificationId.bleCentralDidDiscoverPeripheral, object: peripheralDictionary)
+		Notification.post(name: BLEManager.NotificationId.bleCentralDidDiscoverPeripheral, object: blePeripheral)
 	}
 
 	/**

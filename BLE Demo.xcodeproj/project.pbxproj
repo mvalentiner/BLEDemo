@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2C3CA824D9BB7500AC3E65 /* ScaleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2C3CA724D9BB7500AC3E65 /* ScaleScreen.swift */; };
 		4C2DA84724C73D440045BAD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DA84624C73D440045BAD7 /* AppDelegate.swift */; };
 		4C2DA84924C73D440045BAD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DA84824C73D440045BAD7 /* SceneDelegate.swift */; };
-		4C2DA84B24C73D440045BAD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DA84A24C73D440045BAD7 /* ContentView.swift */; };
+		4C2DA84B24C73D440045BAD7 /* ScanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DA84A24C73D440045BAD7 /* ScanScreen.swift */; };
 		4C2DA84D24C73D470045BAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2DA84C24C73D470045BAD7 /* Assets.xcassets */; };
 		4C2DA85024C73D470045BAD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2DA84F24C73D470045BAD7 /* Preview Assets.xcassets */; };
 		4C2DA85324C73D470045BAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2DA85124C73D470045BAD7 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,8 @@
 		4C2DA88924C86CBB0045BAD7 /* BLEMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DA88824C86CBB0045BAD7 /* BLEMeasurement.swift */; };
 		4C2DA88B24C86EA10045BAD7 /* SOAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DA88A24C86EA10045BAD7 /* SOAService.swift */; };
 		4C2DA88D24C8BA000045BAD7 /* ScaleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DA88C24C8BA000045BAD7 /* ScaleScreenViewController.swift */; };
+		4C62B92124D86378006E58E2 /* WeightScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C62B92024D86378006E58E2 /* WeightScale.swift */; };
+		4C62B92524D894B1006E58E2 /* ObservableFoundPeripherals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C62B92424D894B1006E58E2 /* ObservableFoundPeripherals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2C3CA724D9BB7500AC3E65 /* ScaleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleScreen.swift; sourceTree = "<group>"; };
 		4C2DA84324C73D440045BAD7 /* BLE Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLE Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2DA84624C73D440045BAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C2DA84824C73D440045BAD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C2DA84A24C73D440045BAD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4C2DA84A24C73D440045BAD7 /* ScanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanScreen.swift; sourceTree = "<group>"; };
 		4C2DA84C24C73D470045BAD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C2DA84F24C73D470045BAD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C2DA85224C73D470045BAD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 		4C2DA88824C86CBB0045BAD7 /* BLEMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEMeasurement.swift; sourceTree = "<group>"; };
 		4C2DA88A24C86EA10045BAD7 /* SOAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOAService.swift; sourceTree = "<group>"; };
 		4C2DA88C24C8BA000045BAD7 /* ScaleScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleScreenViewController.swift; sourceTree = "<group>"; };
+		4C62B92024D86378006E58E2 /* WeightScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightScale.swift; sourceTree = "<group>"; };
+		4C62B92424D894B1006E58E2 /* ObservableFoundPeripherals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableFoundPeripherals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,16 +106,19 @@
 			isa = PBXGroup;
 			children = (
 				4C2DA84624C73D440045BAD7 /* AppDelegate.swift */,
-				4C2DA88C24C8BA000045BAD7 /* ScaleScreenViewController.swift */,
 				4C2DA84C24C73D470045BAD7 /* Assets.xcassets */,
 				4C2DA86824C73F420045BAD7 /* BLE */,
-				4C2DA84A24C73D440045BAD7 /* ContentView.swift */,
 				4C2DA85424C73D470045BAD7 /* Info.plist */,
 				4C2DA85124C73D470045BAD7 /* LaunchScreen.storyboard */,
 				4C2DA88024C865D50045BAD7 /* Notification+.swift */,
+				4C62B92424D894B1006E58E2 /* ObservableFoundPeripherals.swift */,
 				4C2DA84E24C73D470045BAD7 /* Preview Content */,
+				4C2DA88C24C8BA000045BAD7 /* ScaleScreenViewController.swift */,
 				4C2DA84824C73D440045BAD7 /* SceneDelegate.swift */,
 				4C2DA88A24C86EA10045BAD7 /* SOAService.swift */,
+				4C62B92024D86378006E58E2 /* WeightScale.swift */,
+				4C2DA84A24C73D440045BAD7 /* ScanScreen.swift */,
+				4C2C3CA724D9BB7500AC3E65 /* ScaleScreen.swift */,
 			);
 			path = "BLE Demo";
 			sourceTree = "<group>";
@@ -258,9 +267,12 @@
 				4C2DA84724C73D440045BAD7 /* AppDelegate.swift in Sources */,
 				4C2DA84924C73D440045BAD7 /* SceneDelegate.swift in Sources */,
 				4C2DA87E24C73F420045BAD7 /* BLEPeripheralManagerFactory.swift in Sources */,
+				4C2C3CA824D9BB7500AC3E65 /* ScaleScreen.swift in Sources */,
 				4C2DA88724C868460045BAD7 /* BLEPeripheralManager.swift in Sources */,
 				4C2DA87524C73F420045BAD7 /* BLEPeripheralManagerFactoryService.swift in Sources */,
-				4C2DA84B24C73D440045BAD7 /* ContentView.swift in Sources */,
+				4C62B92524D894B1006E58E2 /* ObservableFoundPeripherals.swift in Sources */,
+				4C62B92124D86378006E58E2 /* WeightScale.swift in Sources */,
+				4C2DA84B24C73D440045BAD7 /* ScanScreen.swift in Sources */,
 				4C2DA87824C73F420045BAD7 /* BLEFORAScale.swift in Sources */,
 				4C2DA88B24C86EA10045BAD7 /* SOAService.swift in Sources */,
 				4C2DA87D24C73F420045BAD7 /* BLEPeripheralManagerDelegate.swift in Sources */,
